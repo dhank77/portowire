@@ -1,12 +1,12 @@
  <div>
      <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="projects">
          <div class="w-100">
-             <h2 class="mb-5">Projects</h2>
+             <h2>Projects</h2>
              
-             <div class="my-3">
+             <div class="my-2">
                 <input type="text" class="form-control" wire:model="search" placeholder="Cari...">
              </div>
-             
+
              <div class="row">
                  @foreach($projects as $project)
                  <div class="col-lg-4 mt-4">
