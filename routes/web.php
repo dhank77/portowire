@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::livewire('/', 'content-description')->name('/');
 Route::livewire('/projects', 'content-index')->name('projects');
-Route::livewire('/description/create', 'description-create')->name('description.create');
+Route::livewire('/description/create', 'description-create')->name('description.create')->middleware('auth');
+Route::livewire('/projects/lists', 'projects-lists')->name('projects.lists')->middleware('auth');
 Auth::routes();
 

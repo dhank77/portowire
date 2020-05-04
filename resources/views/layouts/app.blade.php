@@ -66,7 +66,10 @@
                     <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('/') }}">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('description.create') }}">Edit Description</a>
+                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('description.create') }}">Description</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('projects.lists') }}">Projects</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

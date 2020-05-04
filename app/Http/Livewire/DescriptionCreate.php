@@ -8,7 +8,6 @@ use Livewire\Component;
 class DescriptionCreate extends Component
 {
 
-
     public $name;
     public $description;
     public $social;
