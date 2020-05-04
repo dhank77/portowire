@@ -39,10 +39,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#about">About</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#portofolio">Portfolio</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('projects') }}">Projects</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#experience">Experience</a>

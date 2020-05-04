@@ -15,7 +15,7 @@
                          <div class="card-body" style="height:200px">
                              <h5 class="card-title">{{ $project->name }}</h5>
                              <p class="card-text">{{ \Illuminate\Support\Str::limit($project->description, 50, '...') }}</p>
-                             <a href="#" class="btn btn-primary">Detail</a>
+                             {{-- <a href="#" class="btn btn-primary">Detail</a> --}}
                          </div>
                      </div>
                  </div>
