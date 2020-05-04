@@ -11,7 +11,7 @@
     <title>Resume - M. Hamdani Ilham Latjoro, ST</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
@@ -19,7 +19,7 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/resume.css" rel="stylesheet">
+    <link href="{{ asset('css/resume.css') }}" rel="stylesheet">
     <livewire:styles>
 
 </head>
@@ -38,6 +38,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
+                @guest
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ route('/') }}">About</a>
                 </li>
@@ -59,13 +60,13 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#awards">Awards</a>
                 </li>
-                @if(auth()->user())
+                @else
                 <hr>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ route('/') }}">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}">Post Projects</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('description.create') }}">Edit Description</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -76,7 +77,7 @@
                         @csrf
                     </form>
                 </li>
-                @endif
+                @endguest
             </ul>
         </div>
     </nav>
@@ -85,17 +86,17 @@
     @yield('content')
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+    <script src="{{ asset('js/resume.min.js') }}"></script>
     <livewire:scripts>
 
-    @yield('js')
+        @yield('js')
 
 </body>
 

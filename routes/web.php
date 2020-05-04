@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::livewire('/', 'content-description')->name('/');
 Route::livewire('/projects', 'content-index')->name('projects');
+Route::livewire('/description/create', 'description-create')->name('description.create');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
