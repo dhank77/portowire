@@ -40,10 +40,10 @@
             <ul class="navbar-nav">
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}">About</a>
+                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace" href="{{ route('/') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('projects') }}">Projects</a>
+                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('projects') }}">Projects</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#experience">Experience</a>
@@ -63,10 +63,10 @@
                 @else
                 <hr>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}">Dashboard</a>
+                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('/') }}">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('description.create') }}">Edit Description</a>
+                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('description.create') }}">Edit Description</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -95,6 +95,7 @@
     <!-- Custom scripts for this template -->
     <script src="{{ asset('js/resume.min.js') }}"></script>
     <livewire:scripts>
+    <script src="{{ asset('js/app.js') }}"></script>
 
         @yield('js')
 
