@@ -39,36 +39,33 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 @guest
-                <li class="nav-item">
+                <li class="nav-item{{ request()->is('/') ? " active" : "" }}">
                     <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace" href="{{ route('/') }}">About</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item{{ request()->is('projects') ? " active" : "" }}">
                     <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('projects') }}">Projects</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#experience">Experience</a>
+                <li class="nav-item{{ request()->is('experience') ? " active" : "" }}">
+                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace" href="{{ route('experience') }}">Experience</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#education">Education</a>
+                <li class="nav-item{{ request()->is('education') ? " active" : "" }}">
+                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace" href="{{ route('education') }}">Education</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#skills">Skills</a>
+                <li class="nav-item{{ request()->is('skills') ? " active" : "" }}">
+                    <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace" href="{{ route('skills') }}#skills">Skills</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#interests">Interests</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('/') }}#awards">Awards</a>
+                <li class="nav-item{{ request()->is('awards') ? " active" : "" }}">
+                    <a class="nav-link js-scroll-trigger"  data-turbolinks-action="replace"  href="{{ route('awards') }}">Awards</a>
                 </li>
                 @else
                 <hr>
-                <li class="nav-item">
+                <li class="nav-item{{ request()->is('/') ? " active" : "" }}">
                     <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('/') }}">Dashboard</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item{{ request()->is('description/create') ? " active" : "" }}">
                     <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('description.create') }}">Description</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item{{ request()->is('projects/lists') ? " active" : "" }}">
                     <a class="nav-link js-scroll-trigger" data-turbolinks-action="replace"  href="{{ route('projects.lists') }}">Projects</a>
                 </li>
                 <li class="nav-item">
@@ -97,10 +94,10 @@
 
     <!-- Custom scripts for this template -->
     <script src="{{ asset('js/resume.min.js') }}"></script>
-    <livewire:scripts>
     <script src="{{ asset('js/app.js') }}"></script>
+    <livewire:scripts>
 
-        @yield('js')
+    @stack('js')
 
 </body>
 

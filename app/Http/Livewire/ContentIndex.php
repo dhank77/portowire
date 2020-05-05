@@ -16,10 +16,10 @@ class ContentIndex extends Component
 
     public function render()
     {
-        $projects = Project::paginate(6);
+        $projects = Project::latest()->paginate(6);
 
         if($this->search != null){
-            $projects = Project::where('name', 'like', '%' . $this->search . '%')->paginate(6);
+            $projects = Project::where('name', 'like', '%' . $this->search . '%')->latest()->paginate(6);
         }
 
         return view('livewire.content-index', compact('projects'));

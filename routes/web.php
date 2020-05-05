@@ -13,10 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Auth::routes();
 Route::livewire('/', 'content-description')->name('/');
 Route::livewire('/projects', 'content-index')->name('projects');
+Route::livewire('/experience', 'content-experinece')->name('experience');
+Route::livewire('/education', 'content-education')->name('education');
+Route::livewire('/skills', 'content-skills')->name('skills');
+Route::livewire('/awards', 'content-awards')->name('awards');
+
+// Admin Only
 Route::livewire('/description/create', 'description-create')->name('description.create')->middleware('auth');
 Route::livewire('/projects/lists', 'projects-lists')->name('projects.lists')->middleware('auth');
-Auth::routes();
+Route::livewire('/projects/add', 'projects-create')->name('projects.create')->middleware('auth');
+Route::post('/upload', 'UploadController@index')->middleware('auth');
+
 

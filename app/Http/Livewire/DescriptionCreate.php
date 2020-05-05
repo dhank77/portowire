@@ -38,7 +38,7 @@ class DescriptionCreate extends Component
             'contact' => 'required',
         ]);
 
-        $desc = Description::where('id', 1)
+        Description::where('id', 1)
         ->update([
             'name' => $this->name,
             'description' => $this->description,
@@ -47,6 +47,6 @@ class DescriptionCreate extends Component
             'contact' => $this->contact,
         ]);
         $this->emit('descriptionUpdated');
-        session()->flash('success', 'Data berhasil diupdate');
+        session()->flash('success', 'Description was changed!');
     }
 }
