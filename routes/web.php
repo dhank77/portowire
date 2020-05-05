@@ -13,7 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+// Authentication Routes...
+Route::get('login', [
+    'as' => 'login',
+    'uses' => 'Auth\LoginController@showLoginForm'
+]);
+Route::post('login', [
+    'as' => '',
+    'uses' => 'Auth\LoginController@login'
+]);
+Route::post('logout', [
+    'as' => 'logout',
+    'uses' => 'Auth\LoginController@logout'
+]);
+
 Route::livewire('/', 'content-description')->name('/');
 Route::livewire('/projects', 'content-index')->name('projects');
 Route::livewire('/experience', 'content-experinece')->name('experience');
@@ -26,5 +39,3 @@ Route::livewire('/description/create', 'description-create')->name('description.
 Route::livewire('/projects/lists', 'projects-lists')->name('projects.lists')->middleware('auth');
 Route::livewire('/projects/add', 'projects-create')->name('projects.create')->middleware('auth');
 Route::post('/upload', 'UploadController@index')->middleware('auth');
-
-
