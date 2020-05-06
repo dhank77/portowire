@@ -26,7 +26,7 @@
                  @foreach($projects as $project)
                  <div class="col-lg-4 mt-4">
                      <div class="card" style="width: 18rem;">
-                         <img class="card-img-top" src="{{ asset($project->image) }}" height="150px">
+                         <img class="card-img-top" src="{{ asset('storage/' . $project->image) }}" height="150px">
                          <div class="card-body" style="height:200px">
                              <h5 class="card-title">{{ $project->name }}</h5>
                              <p class="card-text">{{ \Illuminate\Support\Str::limit($project->description, 50, '...') }}</p>
